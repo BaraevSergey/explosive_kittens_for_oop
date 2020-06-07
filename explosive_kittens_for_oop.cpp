@@ -5,5 +5,5 @@
 
 int main()
 {
-    std::cout << "Kill me!\n";
+    std::cout << "Kill me пожалуйста!\n";
 }
