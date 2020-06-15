@@ -8,6 +8,6 @@ class Cards
 
 	public: Cards(string input, int act)
 	{
-		name = input;5
+		name = input;
 	}
 };
