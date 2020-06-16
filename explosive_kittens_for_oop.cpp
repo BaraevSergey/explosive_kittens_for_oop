@@ -2,8 +2,14 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "card.h"
+#include "Player.h"
+
 using namespace std;
 int main()
 {
-    cout << "Hello World!";
+    vector <Card> dec; // вектор колоды
+    vector <Player> players; // вектор игроков
+    vector <Card> active_dec; // вектор активной колоды
 }

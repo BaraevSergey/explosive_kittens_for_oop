@@ -6,11 +6,11 @@ using namespace std;
 class Player
 {
 	string name;
-	vector <Card> hand; 
+	vector <Card> hand;
 
-	public: Player(string input)
-	{
-		name = input;
-	}
-
+public: Player(string input)
+{
+	name = input;
 }
+
+};
