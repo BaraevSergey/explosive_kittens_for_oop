@@ -7,8 +7,8 @@ class Card
 	string name;
 	int id_action; 
 
-public: Card(string input)
-{
-	name = input;
-}
+	public: Card(string input)
+	{
+		name = input;
+	}
 };

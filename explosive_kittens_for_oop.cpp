@@ -9,7 +9,7 @@
 using namespace std;
 int main()
 {
-    vector <Card> dec; // вектор колоды
-    vector <Player> players; // вектор игроков
-    vector <Card> active_dec; // вектор активной колоды
+    vector <Card> deck; // вектор колоды
+    vector <Player> active_players; // вектор игроков
+    vector <Card> active_deck; // вектор активной колоды
 }
