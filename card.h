@@ -4,11 +4,13 @@
 using namespace std;
 class Card
 {
-	string name;
-	int id_action; 
+	public:
+		string name;
+		int id_action; 
 
-	public: Card(string input)
+	public: Card()
 	{
-		name = input;
+
 	}
+
 };

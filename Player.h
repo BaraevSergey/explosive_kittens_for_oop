@@ -5,12 +5,14 @@
 using namespace std;
 class Player
 {
-	string name;
-	vector <Card> hand;
+	public:
+		string name;
+		vector <Card> hand;
 
-	public: Player(string input)
+	public: Player()
 	{
-		name = input;
+		cout << "¬ведите им€ игрока: ";
+		cin >> name;
 	}
 
 };
