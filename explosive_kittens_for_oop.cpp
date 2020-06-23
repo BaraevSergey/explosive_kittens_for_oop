@@ -54,6 +54,7 @@ void action_card(const vector<Player>& Players, Player Active_Player, int id_act
             {
                 //Players.erase(Players.begin() + i);
                 //не работает (
+                //удаляем из списка игроков игрока по идее
             }
             else
             {
