@@ -21,7 +21,6 @@ int main()
     for (int i = 0; i < num_of_players; i++) //создал цикл заполнения игроков
     {
         Player temp_player("Player"+to_string(i+1));
-        cout << temp_player.name+"\n";
         active_players.push_back(temp_player);
     }
 
@@ -51,7 +50,16 @@ void action_card(const vector<Player>& Players, Player Active_Player, int id_act
     {
         for (int i = 0; i != Players.size(); i++)
         {
-            cout << 1;
+            if (Active_Player.name == Players[i].name)
+            {
+                //Players.erase(Players.begin() + i);
+                //не работает (
+            }
+            else
+            {
+
+            }
+
         }
     }
     default:
