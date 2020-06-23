@@ -21,4 +21,5 @@ class Card
 		name = card_name;
 		id_action = card_action;
 	}
+
 };
