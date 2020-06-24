@@ -6,11 +6,10 @@
 using namespace std;
 
 
-void action_card(const vector<Player>& Players, Player Active_Player, int id_action);
+void action_card(vector<Player>& Players, Player Active_Player, int id_action);
 int main()
 {
     setlocale(LC_ALL, "Russian");
-
     vector <Card> deck; // вектор колоды
     vector <Player> active_players; // вектор игроков
     vector <Card> active_deck; // вектор активной колоды
@@ -39,7 +38,7 @@ int main()
         deck.push_back(temp_card);
     }
 
-    
+    action_card(active_players, active_players.at(0).name, 1);
     while (true)
     {
         //ход первого игрока
@@ -70,12 +69,11 @@ int main()
         }
         deck.erase(deck.begin()); 
     }
-
     system("pause");
         
 }
 
-void action_card(const vector<Player>& Players, Player Active_Player, int id_action)
+void action_card(vector<Player>& Players, Player Active_Player, int id_action)
 //я создал метод тут , так как хз пока куда его
 {
     switch (id_action)
@@ -86,16 +84,16 @@ void action_card(const vector<Player>& Players, Player Active_Player, int id_act
     {
         for (int i = 0; i != Players.size(); i++)
         {
-            if (Active_Player.name == Players[i].name)
-            {
-                //Players.erase(Players.begin() + i);
-                //не работает (
-                //удаляем из списка игроков игрока по идее
-            }
-            else
-            {
+            //if (Active_Player.name == Players[i].name)
+            //{
+            //    Players.erase(Players.begin() + i);
+            //    //не работает (
+            //    //удаляем из списка игроков игрока по идее
+            //}
+            //else
+            //{
 
-            }
+            //}
 
         }
     }

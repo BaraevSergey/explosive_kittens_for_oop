@@ -7,19 +7,6 @@ class Card
 	public:
 		string name; //имя карты
 		int id_action; // индекс события карты
-
-	/*Card()  эти методы вообще нужны?
-	{
-
-	}
-	Card(string input)
-	{
-		name = input;
-	}*/
-	Card(string card_name, int card_action)
-	{
-		name = card_name;
-		id_action = card_action;
-	}
+		Card(string card_name, int card_action);
 
 };

@@ -9,14 +9,14 @@ public:
 		string name;
 		vector <Card> hand;
 
-	/*Player() это нужный метод?
-	{
-		cout << "Введите имя игрока: ";
-		cin >> name;
-	}*/
 	Player(string input)
 	{
 		name = input;
+	}
+	Player(const Player &player)//конструктор копирования
+	{
+		name = player.name;
+		hand = player.hand;
 	}
 
 };
