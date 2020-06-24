@@ -25,17 +25,18 @@ int main()
     }
 
 
-    
-    for (int i = 0; i < num_of_boom; i++) //присваиваем свойство для взрывных карт
-    {
-        Card temp_card("Взрывной котенок", 1);
-        deck.push_back(temp_card);
-    }
     for (int i = 0; i < num_of_norm; i++) // присваивание свойств нейтральным картам
     {
         Card temp_card("Обычная карта", 0);
         deck.push_back(temp_card);
     }
+
+    for (int i = 0; i < num_of_boom; i++) //присваиваем свойство для взрывных карт
+    {
+        Card temp_card("Взрывной котенок", 1);
+        deck.push_back(temp_card);
+    }
+   
     action_card(active_players, active_players[0], 1);
     system("pause");
 }
