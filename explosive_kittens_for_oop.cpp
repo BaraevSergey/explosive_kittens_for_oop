@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 void action_card(const vector<Player>& Players, Player Active_Player, int id_action);
 int main()
 {
@@ -23,13 +24,60 @@ int main()
         Player temp_player("Player"+to_string(i+1));
         active_players.push_back(temp_player);
     }
-
-
+ 
     for (int i = 0; i < num_of_norm; i++) // присваивание свойств нейтральным картам
     {
         Card temp_card("Обычная карта", 0);
         deck.push_back(temp_card);
     }
+
+
+    for (int i = 0; i < num_of_boom; i++) //присваиваем свойство для взрывных карт
+
+
+    for (int i = 0; i < num_of_norm; i++) // присваивание свойств нейтральным картам
+
+    {
+        Card temp_card("Обычная карта", 0);
+        deck.push_back(temp_card);
+    }
+
+    
+    while (active_players.size() != 1)
+    {
+        //ход первого игрока
+        active_players.at(0).hand.push_back(deck[0]); // добавляем в руку игроку верхнюю карту из колоды
+        cout << "Player1 взял карту" << "\n";
+        if (deck[0].id_action == 1)// проверяем свойство карты
+        {
+            active_players.erase(active_players.begin()); //удаляем игрока, если карта взрывная
+            cout << "Player1 взорвался!" << "\n";
+        }
+        deck.erase(deck.begin()); //удаляем верхнюю карту из колоды
+
+        if (deck.size() == 0) //если колода пуста, то прерываем игру
+        {
+            break;
+        }
+
+        //ход второго игрока
+        active_players.at(1).hand.push_back(deck[0]);
+        cout << "Player2 взял карту" << "\n";
+        if (deck[0].id_action == 1)
+        {
+            active_players.erase(active_players.begin() + 1);
+            cout << "Player2 взорвался!" << "\n";
+        }
+        deck.erase(deck.begin()); 
+
+        if (deck.size() == 0)
+        {
+            break;
+        }
+
+    }
+
+
 
     for (int i = 0; i < num_of_boom; i++) //присваиваем свойство для взрывных карт
     {
@@ -37,8 +85,9 @@ int main()
         deck.push_back(temp_card);
     }
    
-    action_card(active_players, active_players[0], 1);
+
     system("pause");
+        
 }
 
 void action_card(const vector<Player>& Players, Player Active_Player, int id_action)
