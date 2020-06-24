@@ -8,14 +8,14 @@ class Card
 		string name; //имя карты
 		int id_action; // индекс события карты
 
-	Card()
+	/*Card()  эти методы вообще нужны?
 	{
 
 	}
 	Card(string input)
 	{
 		name = input;
-	}
+	}*/
 	Card(string card_name, int card_action)
 	{
 		name = card_name;

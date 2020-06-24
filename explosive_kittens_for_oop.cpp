@@ -24,23 +24,23 @@ int main()
         Player temp_player("Player"+to_string(i+1));
         active_players.push_back(temp_player);
     }
- 
-    for (int i = 0; i < num_of_boom; i++) // присваивание свойств нейтральным картам
 
-    {
-        Card temp_card("Взрывная карта", 1);
-        deck.push_back(temp_card);
-    }
-
-    for (int i = 0; i < num_of_norm; i++) // присваивание свойств нейтральным картам
+    for (int i = 0; i < num_of_norm; i++) // присваивание свойств НЕЙТРАЛЬНЫМ картам
 
     {
         Card temp_card("Обычная карта", 0);
         deck.push_back(temp_card);
     }
 
+    for (int i = 0; i < num_of_boom; i++) // присваивание свойств ВЗРЫВНЫМ картам
+
+    {
+        Card temp_card("Взрывная карта", 1);
+        deck.push_back(temp_card);
+    }
+
     
-    while (active_players.size() != 1)
+    while (true)
     {
         //ход первого игрока
         active_players.at(0).hand.push_back(deck[0]); // добавляем в руку игроку верхнюю карту из колоды
@@ -49,13 +49,12 @@ int main()
         {
             active_players.erase(active_players.begin()); //удаляем игрока, если карта взрывная
             cout << "Player1 взорвался!" << "\n";
+            if (active_players.size() == 1)// если после взрыва текущего игрока остался один активный игрок, то игра заканчивается
+            {
+                break;
+            }
         }
         deck.erase(deck.begin()); //удаляем верхнюю карту из колоды
-
-        if (deck.size() == 0) //если колода пуста, то прерываем игру
-        {
-            break;
-        }
 
         //ход второго игрока
         active_players.at(1).hand.push_back(deck[0]);
@@ -64,14 +63,12 @@ int main()
         {
             active_players.erase(active_players.begin() + 1);
             cout << "Player2 взорвался!" << "\n";
+            if (active_players.size() == 1) // если после взрыва текущего игрока остался один активный игрок, то игра заканчивается
+            {
+                break;
+            }
         }
         deck.erase(deck.begin()); 
-
-        if (deck.size() == 0)
-        {
-            break;
-        }
-
     }
 
     system("pause");

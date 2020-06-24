@@ -9,11 +9,11 @@ public:
 		string name;
 		vector <Card> hand;
 
-	Player()
+	/*Player() это нужный метод?
 	{
 		cout << "¬ведите им€ игрока: ";
 		cin >> name;
-	}
+	}*/
 	Player(string input)
 	{
 		name = input;
