@@ -25,15 +25,12 @@ int main()
         active_players.push_back(temp_player);
     }
  
-    for (int i = 0; i < num_of_norm; i++) // присваивание свойств нейтральным картам
+    for (int i = 0; i < num_of_boom; i++) // присваивание свойств нейтральным картам
+
     {
-        Card temp_card("Обычная карта", 0);
+        Card temp_card("Взрывная карта", 1);
         deck.push_back(temp_card);
     }
-
-
-    for (int i = 0; i < num_of_boom; i++) //присваиваем свойство для взрывных карт
-
 
     for (int i = 0; i < num_of_norm; i++) // присваивание свойств нейтральным картам
 
@@ -77,20 +74,12 @@ int main()
 
     }
 
-
-
-    for (int i = 0; i < num_of_boom; i++) //присваиваем свойство для взрывных карт
-    {
-        Card temp_card("Взрывной котенок", 1);
-        deck.push_back(temp_card);
-    }
-   
-
     system("pause");
         
 }
 
 void action_card(const vector<Player>& Players, Player Active_Player, int id_action)
+//я создал метод тут , так как хз пока куда его
 {
     switch (id_action)
     {
