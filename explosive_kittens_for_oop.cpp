@@ -24,6 +24,8 @@ int main()
     create.create_players(num_of_players, active_players);
     create.create_card_bomb(num_of_boom, deck);
     create.create_card_neutral(num_of_norm, deck);
+    create.mix_deck(deck);
+    debug.write_list_card_from_deck(deck);
    
     while (active_players.size() != 1)
     {

@@ -1,4 +1,5 @@
 #include "create.h"
+#include <ctime>
 
 void Create::create_players(int number, vector <Player>& active_players)
 {
@@ -23,4 +24,17 @@ void Create::create_card_bomb(int number_of_bomb, vector <Card>& deck)
         Card temp_card("Взрывная карта", 1);
         deck.push_back(temp_card);
     }
+}
+void Create::mix_deck(vector <Card>& deck)
+{
+    srand(time(0));
+    vector <Card> tmp_deck;
+    int tmp = 0;
+    while (deck.size() != 0)
+    {
+        tmp = rand() % deck.size();
+        tmp_deck.push_back(deck.at(tmp));
+        deck.erase(deck.begin() + tmp);
+    }
+    deck = tmp_deck;
 }
