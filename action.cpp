@@ -27,6 +27,7 @@ void Action::action_card(vector<Player>& Players, Player Active_Player, Card car
             if (Active_Player.name == Players[i].name)
             {
                 Players.erase(Players.begin() + i);
+                break;
             }
             else
             {
