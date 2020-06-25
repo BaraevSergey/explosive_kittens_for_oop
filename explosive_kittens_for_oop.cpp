@@ -2,11 +2,10 @@
 #include <vector>
 #include "card.h"
 #include "Player.h"
-
 using namespace std;
 
 
-void action_card(vector<Player>& Players, Player Active_Player, int id_action);
+void action_card(vector<Player>& Players, Player Active_Player, Card card);
 int main()
 {
     setlocale(LC_ALL, "Russian");
@@ -24,6 +23,12 @@ int main()
         active_players.push_back(temp_player);
     }
 
+    for (int i = 0; i < num_of_boom; i++) // присваивание свойств ВЗРЫВНЫМ картам
+    {
+        Card temp_card("Взрывная карта", 1);
+        deck.push_back(temp_card);
+    }
+
     for (int i = 0; i < num_of_norm; i++) // присваивание свойств НЕЙТРАЛЬНЫМ картам
 
     {
@@ -31,69 +36,80 @@ int main()
         deck.push_back(temp_card);
     }
 
-    for (int i = 0; i < num_of_boom; i++) // присваивание свойств ВЗРЫВНЫМ картам
+  
 
+    //метод вывода карт в колоде
+    cout << "Карты в колоде:\n";
+    for (Card card_deck : deck)
     {
-        Card temp_card("Взрывная карта", 1);
-        deck.push_back(temp_card);
+        cout <<  card_deck.name+"\n";
+    }
+    //метод показа добавленных игроков
+    cout << "\nИгроки активные:\n";
+    for (Player player : active_players)
+    {
+        cout << player.name+"\n";
     }
 
-    action_card(active_players, active_players.at(0).name, 1);
-    while (true)
-    {
-        //ход первого игрока
-        active_players.at(0).hand.push_back(deck[0]); // добавляем в руку игроку верхнюю карту из колоды
-        cout << "Player1 взял карту" << "\n";
-        if (deck[0].id_action == 1)// проверяем свойство карты
-        {
-            active_players.erase(active_players.begin()); //удаляем игрока, если карта взрывная
-            cout << "Player1 взорвался!" << "\n";
-            if (active_players.size() == 1)// если после взрыва текущего игрока остался один активный игрок, то игра заканчивается
-            {
-                break;
-            }
-        }
-        deck.erase(deck.begin()); //удаляем верхнюю карту из колоды
 
-        //ход второго игрока
-        active_players.at(1).hand.push_back(deck[0]);
-        cout << "Player2 взял карту" << "\n";
-        if (deck[0].id_action == 1)
+
+    while (active_players.size() != 1)
+    {
+        for (int i = 0; i < active_players.size(); i++)
         {
-            active_players.erase(active_players.begin() + 1);
-            cout << "Player2 взорвался!" << "\n";
-            if (active_players.size() == 1) // если после взрыва текущего игрока остался один активный игрок, то игра заканчивается
+            //берется карта, либо в руку кладется либо игрок умирает
+            action_card(active_players, active_players[i], deck.back());
+            //ту карту которую взяли удаляем из колоды
+            deck.pop_back();
+        }
+        //проверка какие карты в руке у игрока
+        for (Player player : active_players)
+        {
+            cout << "У игрока " + player.name + " сейчас в руке:\n";
+            for (Card card : player.hand)
             {
-                break;
+                cout << card.name + "\n";
             }
         }
-        deck.erase(deck.begin()); 
+      
     }
     system("pause");
         
 }
 
-void action_card(vector<Player>& Players, Player Active_Player, int id_action)
+void action_card(vector<Player>& Players, Player Active_Player, Card card)
 //я создал метод тут , так как хз пока куда его
 {
-    switch (id_action)
+    switch (card.id_action)
     {
     case 0: //ничего
+    {
+        for (int i = 0; i != Players.size(); i++)
+        {
+            if (Active_Player.name == Players[i].name)
+            {
+                Players[i].hand.push_back(card);
+            }
+            else
+            {
+
+            }
+
+        }
+    }
         break;
     case 1: //котенок
     {
         for (int i = 0; i != Players.size(); i++)
         {
-            //if (Active_Player.name == Players[i].name)
-            //{
-            //    Players.erase(Players.begin() + i);
-            //    //не работает (
-            //    //удаляем из списка игроков игрока по идее
-            //}
-            //else
-            //{
+            if (Active_Player.name == Players[i].name)
+            {
+                Players.erase(Players.begin() + i);
+            }
+            else
+            {
 
-            //}
+            }
 
         }
     }
