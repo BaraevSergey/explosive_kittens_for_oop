@@ -14,7 +14,7 @@ int main()
     vector <Card> deck; // вектор колоды
     vector <Player> active_players; // вектор игроков
     int num_of_players = 2; // переменная для задания количества игроков
-    int num_of_cards = 13; // количество карт в колоде
+    int num_of_cards = num_of_players*7; // количество карт в колоде
     int num_of_boom = num_of_players - 1;// количество взрывных котят в колод
     int num_of_norm = num_of_cards - num_of_boom; // количество "нейтральных" карт в колоде
     
@@ -22,8 +22,8 @@ int main()
     Action action;
     Create create;
     create.create_players(num_of_players, active_players);
+    create.create_card_neutral(num_of_norm, deck); 
     create.create_card_bomb(num_of_boom, deck);
-    create.create_card_neutral(num_of_norm, deck);
     create.mix_deck(deck);
     debug.write_list_card_from_deck(deck);
    
