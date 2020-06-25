@@ -5,18 +5,10 @@
 using namespace std;
 class Player
 {
-public:
+	public:
 		string name;
 		vector <Card> hand;
-
-	Player(string input)
-	{
-		name = input;
-	}
-	Player(const Player &player)//конструктор копирования
-	{
-		name = player.name;
-		hand = player.hand;
-	}
+		Player(string input);
+		Player(const Player& player);//конструктор копирования
 
 };
