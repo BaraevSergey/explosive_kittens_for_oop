@@ -29,3 +29,13 @@ void Debug::write_list_card_from_players(Player player) //метод, показывающий ка
     }
     cout << "\n\n";
 }
+
+void Debug::write_player_boom_info(Player player)
+{
+	cout << "Игрок " + player.name + " был взорван";
+}
+
+void Debug::write_player_winner_info(Player player)
+{
+	cout << "Игрок " + player.name + " победил!";
+}
