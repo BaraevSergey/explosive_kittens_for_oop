@@ -17,7 +17,7 @@ void Debug::write_list_active_players(vector <Player>& active_players) //метод, 
     {
         cout << player.name + "\n";
     }
-
+    cout << "\n";
 }
 
 void Debug::write_list_card_from_players(Player player) //метод, показывающий карты в руке игрока
@@ -25,6 +25,7 @@ void Debug::write_list_card_from_players(Player player) //метод, показывающий ка
     cout << "У игрока " + player.name + " сейчас в руке:\n";
     for (Card card : player.hand)
     {
-        cout << card.name + "\n";
+        cout << card.name + ";";
     }
+    cout << "\n\n";
 }
