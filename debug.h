@@ -13,4 +13,5 @@ class Debug
 		void write_list_card_from_players(Player player); //метод, показывающий карты в руке игрока
 		void write_player_boom_info(Player player); //метод вывода информации о том, что игрок взорвался
 		void write_player_winner_info(Player player); //метод вывода информации о том, что игрок победил
+		void write_took_card(Player player, Card card); //метод вывода инфы о том, что игрок взял карту
 };

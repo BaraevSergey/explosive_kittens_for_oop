@@ -29,15 +29,13 @@ int main(int argc, char* argv[])
     debug.write_list_active_players(active_players);
     while (active_players.size() != 1)
     {
-        for (int i = 0; i < active_players.size(); i++)
-        {
-            
-            cout << active_players[i].name + " берет карту " + deck.back().name+"\n";
+       
+            debug.write_took_card(active_players.back(), deck.back());
             //берется карта, либо в руку кладется либо игрок умирает
-            action.action_card(active_players, active_players[i], deck.back());
+            action.action_card(active_players, active_players.back(), deck.back());
             //ту карту которую взяли удаляем из колоды
             deck.pop_back();
-        } 
     }
+    debug.write_player_winner_info(active_players[0]);
     system("pause");
 }

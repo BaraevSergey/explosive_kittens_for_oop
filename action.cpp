@@ -11,8 +11,11 @@ void Action::action_card(vector<Player>& Players, Player Active_Player, Card car
         {
             if (Active_Player.name == Players[i].name)
             {
-                Players[i].hand.push_back(card);
-                debug.write_list_card_from_players(Players[i]);
+                Active_Player.hand.push_back(card);
+                debug.write_list_card_from_players(Active_Player);
+                Players.erase(Players.begin() + i);
+                Players.insert(Players.begin(), Active_Player);
+               
             }
             else
             {
@@ -28,8 +31,8 @@ void Action::action_card(vector<Player>& Players, Player Active_Player, Card car
         {
             if (Active_Player.name == Players[i].name)
             {
+                debug.write_player_boom_info(Players[i]);
                 Players.erase(Players.begin() + i);
-                // debug.взрыв() метод напишет артем в дебаг
                 break;
             }
             else

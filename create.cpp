@@ -5,7 +5,7 @@ void Create::create_players(int number, vector <Player>& active_players)
 {
     for (int i = 0; i < number; i++) 
     {
-        Player temp_player("Player" + to_string(i + 1));
+        Player temp_player("Player" + to_string(number-i));
         active_players.push_back(temp_player);
     }
 }

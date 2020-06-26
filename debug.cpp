@@ -32,10 +32,15 @@ void Debug::write_list_card_from_players(Player player) //метод, показывающий ка
 
 void Debug::write_player_boom_info(Player player)
 {
-	cout << "Игрок " + player.name + " был взорван";
+	cout << "Игрок " + player.name + " взорвался\n\n";
 }
 
 void Debug::write_player_winner_info(Player player)
 {
-	cout << "Игрок " + player.name + " победил!";
+	cout << "Игрок " + player.name + " победил!\n";
+}
+
+void Debug::write_took_card(Player player, Card card)
+{
+    cout << "Игрок " + player.name + " взял карту " + card.name + "\n";
 }
