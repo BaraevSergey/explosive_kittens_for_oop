@@ -19,6 +19,7 @@ int main(int argc, char* argv[])
     int num_of_cards = num_of_players*7; // количество карт в колоде
     int num_of_boom = num_of_players - 1;// количество взрывных котят в колод
     int num_of_norm = num_of_cards - num_of_boom; // количество "нейтральных" карт в колоде
+	int num_of_defuse = num_of_players + 2;
     
     Debug debug;
     Action action;
@@ -26,6 +27,7 @@ int main(int argc, char* argv[])
     create.create_players(num_of_players, active_players);
     create.create_card_neutral(num_of_norm, deck); 
     create.create_card_bomb(num_of_boom, deck);
+	create.create_card_defuse(num_of_defuse, deck);
     create.mix_deck(deck);
     debug.write_list_card_from_deck(deck);
     debug.write_list_active_players(active_players);
