@@ -11,4 +11,6 @@ class Debug
 		void write_list_card_from_deck(vector <Card>& deck); //метод показыающий список карт в колоде
 		void write_list_active_players(vector <Player>& active_players); //метод, который показывает какие игроки активные в списке есть
 		void write_list_card_from_players(Player player); //метод, показывающий карты в руке игрока
+		void write_player_boom_info(Player player); //метод вывода информации о том, что игрок взорвался
+		void write_player_winner_info(Player player); //метод вывода информации о том, что игрок победил
 };
