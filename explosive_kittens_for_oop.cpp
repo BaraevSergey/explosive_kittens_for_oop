@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
        
             debug.write_took_card(active_players.back(), deck.back());
             //берется карта, либо в руку кладется либо игрок умирает
-            action.action_card(active_players, active_players.back(), deck.back());
+            action.get_card(active_players, active_players.back(), deck.back());
             //ту карту которую взяли удаляем из колоды
             deck.pop_back();
     }
