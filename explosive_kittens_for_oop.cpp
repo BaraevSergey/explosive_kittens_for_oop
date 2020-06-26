@@ -13,7 +13,9 @@ int main(int argc, char* argv[])
     setlocale(LC_ALL, "Russian");
     vector <Card> deck; // вектор колоды
     vector <Player> active_players; // вектор игроков
-    int num_of_players = atoi(argv[1]); // переменная для задания количества игроков
+    //штука ввода параметров из консоли по гиту не передается, пока оставим 
+    //int num_of_players = atoi(argv[1]); // переменная для задания количества игроков
+    int num_of_players = 4;
     int num_of_cards = num_of_players*7; // количество карт в колоде
     int num_of_boom = num_of_players - 1;// количество взрывных котят в колод
     int num_of_norm = num_of_cards - num_of_boom; // количество "нейтральных" карт в колоде
