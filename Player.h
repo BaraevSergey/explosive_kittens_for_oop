@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 #include <string>
 #include <iostream>
@@ -5,12 +6,10 @@
 using namespace std;
 class Player
 {
-	string name;
-	vector <Card> hand;
-
-	public: Player(string input)
-	{
-		name = input;
-	}
+	public:
+		string name;
+		vector <Card> hand;
+		Player(string input);
+		Player(const Player& player);//конструктор копирования
 
 };

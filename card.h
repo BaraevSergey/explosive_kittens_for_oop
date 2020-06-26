@@ -4,11 +4,10 @@
 using namespace std;
 class Card
 {
-	string name;
-	int id_action; 
-
-	public: Card(string input)
-	{
-		name = input;
-	}
+	public:
+		string name; //имя карты
+		int id_action; // индекс события карты
+		Card(string card_name, int card_action);
+		Card(const Card& card);
+		Card();
 };
