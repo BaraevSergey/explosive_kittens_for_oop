@@ -25,6 +25,14 @@ void Create::create_card_bomb(int number_of_bomb, vector <Card>& deck)
         deck.push_back(temp_card);
     }
 }
+void Create::create_card_defuse(int number_of_defuse, vector <Card> & deck)
+{
+	for (int i = 0; i < number_of_defuse; i++)
+	{
+		Card temp_card("Карта обезвреживания", 2);
+		deck.push_back(temp_card);
+	}
+}
 void Create::mix_deck(vector <Card>& deck)
 {
     srand(time(0));
