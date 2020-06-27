@@ -15,7 +15,6 @@ void Action::get_card(vector<Player>& Players, Player Active_Player, Card card)
             if (Active_Player.name == Players[i].name)
             {
                 Active_Player.hand.push_back(card);
-                debug.write_list_card_from_players(Active_Player);
                 Players.erase(Players.begin() + i);
                 Players.insert(Players.begin(), Active_Player);
                
@@ -53,7 +52,7 @@ void Action::get_card(vector<Player>& Players, Player Active_Player, Card card)
 
 void Action::card_in_hand(vector <Card>& deck, vector<Player>& Players, Player active_player, Card card, int n)
 {
-    // n - индекс обезвреда
+    // n - индекс карты в руке
     switch (card.id_action)
     {
     case 0:
@@ -62,15 +61,15 @@ void Action::card_in_hand(vector <Card>& deck, vector<Player>& Players, Player a
     case 2:
     {
         srand(time(0));
-        vector <Card> tmp_deck;
+        Card temp_card;
         for (int i = 0; i != Players.size(); i++)
         {
             if (active_player.name == Players[i].name)
             {
-                tmp_deck.push_back(deck.back()); // переносим взрывную карту в вспомогательный вектор
+                temp_card = deck.back();
                 deck.pop_back(); //удаляем взрывную карту из основной колоды
-                deck.insert(deck.begin() + rand() % deck.size(), tmp_deck.back()); // замешиваем взрывную карту в колоду
-                active_player.hand.erase(active_player.hand.begin() + n); // удаление обезвреда
+                deck.insert(deck.begin() + rand() % deck.size(), temp_card); // замешиваем взрывную карту в колоду
+                active_player.hand.erase(active_player.hand.begin() + n); // удаление обезвреда из руки
                 Players.erase(Players.begin() + i);
                 Players.insert(Players.begin(), active_player);
             }

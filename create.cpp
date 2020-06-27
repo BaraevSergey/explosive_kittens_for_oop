@@ -13,7 +13,7 @@ void Create::create_card_neutral(int number_of_card, vector <Card>& deck)
 {
     for (int i = 0; i < number_of_card; i++)
     {
-        Card temp_card("Обычная карта", 0);
+        Card temp_card("Обычная", 0);
         deck.push_back(temp_card);
     }
 }
@@ -21,7 +21,7 @@ void Create::create_card_bomb(int number_of_bomb, vector <Card>& deck)
 {
     for (int i = 0; i < number_of_bomb; i++)
     {
-        Card temp_card("Взрывная карта", 1);
+        Card temp_card("Взрывная", 1);
         deck.push_back(temp_card);
     }
 }
@@ -29,7 +29,7 @@ void Create::create_card_defuse(int number_of_defuse, vector <Card> & deck)
 {
 	for (int i = 0; i < number_of_defuse; i++)
 	{
-		Card temp_card("Карта обезвреживания", 2);
+		Card temp_card("Обезвреживание", 2);
 		deck.push_back(temp_card);
 	}
 }
