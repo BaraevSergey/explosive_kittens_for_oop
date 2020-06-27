@@ -2,7 +2,7 @@
 #include "debug.h"
 #include <ctime>
 
-void Action::get_card(vector<Player>& Players,Player active_player, Card card, int n)
+void Action::get_card(vector<Player>& Players, Card card, int n)
 {
     // n - позиция игрока в списке активных игроков
     Debug debug;
@@ -11,9 +11,10 @@ void Action::get_card(vector<Player>& Players,Player active_player, Card card, i
     case 0: //ничего
     case 2:
     {
-        active_player.hand.push_back(card);
+        Players[n].hand.push_back(card);
+        Player temp = Players[n];
         Players.erase(Players.begin() + n); // перенос игрока в начало вектора активных игроков
-        Players.insert(Players.begin(), active_player);
+        Players.insert(Players.begin(), temp);
     }
     break;
     case 1: //котенок
@@ -28,9 +29,9 @@ void Action::get_card(vector<Player>& Players,Player active_player, Card card, i
     }
 }
 
-void Action::card_in_hand(vector <Card>& deck, vector<Player>& Players, Player active_player, Card card, int n, int np)
+void Action::card_in_hand(vector <Card>& deck, vector<Player>& Players, Card card, int nc, int np)
 {
-    // n - индекс карты в руке
+    // nc - индекс карты в руке
     // np - позиция игрока в списке активных игроков
     switch (card.id_action)
     {
@@ -47,9 +48,10 @@ void Action::card_in_hand(vector <Card>& deck, vector<Player>& Players, Player a
                 deck.pop_back(); //удаляем взрывную карту из основной колоды
                 deck.insert(deck.begin() + rand() % deck.size(), temp_card); // замешиваем взрывную карту в колоду
             }
-        active_player.hand.erase(active_player.hand.begin() + n); // удаление обезвреда из руки
+        Players[np].hand.erase(Players[np].hand.begin() + nc); // удаление обезвреда из руки
+        Player temp = Players[np];
         Players.erase(Players.begin() + np); // перенос игрока в начало вектора активных игроков
-        Players.insert(Players.begin(), active_player);
+        Players.insert(Players.begin(), temp);
     }
     default:
         break;

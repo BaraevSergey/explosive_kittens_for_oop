@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
                 if (card.id_action == 2)
                 {
                     debug.write_player_defuse_info(active_players.back());
-                    action.card_in_hand(deck, active_players, active_players.back(), card, i, active_players.size() - 1);
+                    action.card_in_hand(deck, active_players, card, i, active_players.size() - 1);
                     flag = false;
                     debug.write_list_card_from_deck(deck);
                     break;
@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
             }
             if (flag)
             {
-                action.get_card(active_players, active_players.back(), deck.back(), active_players.size() - 1);
+                action.get_card(active_players, deck.back(), active_players.size() - 1);
                 deck.pop_back();
                 debug.write_list_card_from_players(active_players.back());
             }
@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
         {
             debug.write_took_card(active_players.back(), deck.back());
             //берется карта, либо в руку кладется либо игрок умирает
-            action.get_card(active_players, active_players.back(), deck.back(), active_players.size() - 1);
+            action.get_card(active_players, deck.back(), active_players.size() - 1);
             //ту карту которую взяли удаляем из колоды
             deck.pop_back();
             debug.write_list_card_from_players(active_players.back());
