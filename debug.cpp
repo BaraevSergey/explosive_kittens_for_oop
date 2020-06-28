@@ -69,5 +69,5 @@ void Debug::write_player_defuse_info(Player player)
 	/*
 	player - игрок, карты который сыграл карту обезвредить
 	*/
-	cout << "Игрок " + player.name + " сыграл карту обезвредить!\n\n";
+	cout << "Игрок " + player.name + " сыграл карту обезвредить!\n";
 }
