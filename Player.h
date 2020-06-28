@@ -16,5 +16,6 @@ class Player
 		vector <Card> hand;// карты, принадлежащие игроку
 		Player(string input);// конструктор
 		Player(const Player& player);//конструктор копирования
+		Player();//конструктор по умолчанию
 
 };
