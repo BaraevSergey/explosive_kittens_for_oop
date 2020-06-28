@@ -64,3 +64,26 @@ void Create::mix_deck(vector <Card>& deck)
     }
     deck = tmp_deck;//перенос карт в основную колоду
 }
+
+void Create::hand_filling(vector <Player>& Players, vector <Card>& deck, int n)
+{
+    srand(time(0));
+    for (int j = 0; j != n; j++)
+    {
+        for (int i = 0; i != Players.size(); i++)
+        {
+            int tmp = rand() % deck.size();
+            Players[i].hand.push_back(deck[tmp]);
+            deck.erase(deck.begin() + tmp);
+        }
+    }
+}
+
+void Create::hand_filling_defuse(vector <Player>& Players, vector <Card>& deck)
+{
+    for (int i = 0; i != Players.size(); i++)
+    {
+        Players[i].hand.push_back(deck.back());
+        deck.pop_back();
+    }
+}
