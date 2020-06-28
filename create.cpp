@@ -37,16 +37,21 @@ void Create::create_card_bomb(int number_of_bomb, vector <Card>& deck)
         deck.push_back(temp_card);// добавление карты в конец колоды
     }
 }
-void Create::create_card_defuse(int number_of_defuse, vector <Card> & deck)
+void Create::create_card_defuse(int number_of_defuse, vector <Card> & deck, vector <Player> & players)
 {
     /*
     int number_of_defuse - необходимое количество обезвреживающих карт
     */
-	for (int i = 0; i < number_of_defuse; i++)
+	for (int i = 0; i < number_of_defuse-players.size(); i++) //сначала в колоду карты
 	{
 		Card temp_card("Обезвреживание", 2);// создание объекта класса Card
 		deck.push_back(temp_card);// добавление карты в конец колоды
 	}
+    for (Player player : players) //затем игроку по одной
+    {
+        Card temp_card("Обезвреживание", 2);// создание объекта класса Card
+        player.hand.push_back(temp_card);
+    }
 }
 void Create::mix_deck(vector <Card>& deck)
 {
@@ -65,25 +70,17 @@ void Create::mix_deck(vector <Card>& deck)
     deck = tmp_deck;//перенос карт в основную колоду
 }
 
-void Create::hand_filling(vector <Player>& Players, vector <Card>& deck, int n)
+void Create::hand_filling(vector <Player>& Players, vector <Card>& deck, int n) 
 {
     srand(time(0));
-    for (int j = 0; j != n; j++)
+    for (int j = 0; j != n-1; j++) // заполняем n-1 карт, последняя будет обезвредить из колоды в другом методе
     {
-        for (int i = 0; i != Players.size(); i++)
+        for (int i = 0; i != Players.size(); i++) //по очереди каждому игроку по одной карте
         {
             int tmp = rand() % deck.size();
-            Players[i].hand.push_back(deck[tmp]);
-            deck.erase(deck.begin() + tmp);
+            Players[i].hand.push_back(deck[tmp]); 
+            deck.erase(deck.begin() + tmp); //не забываем удалить карту из колоды
         }
     }
 }
 
-void Create::hand_filling_defuse(vector <Player>& Players, vector <Card>& deck)
-{
-    for (int i = 0; i != Players.size(); i++)
-    {
-        Players[i].hand.push_back(deck.back());
-        deck.pop_back();
-    }
-}

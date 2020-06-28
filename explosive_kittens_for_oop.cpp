@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
     int num_of_boom = num_of_players - 1;// количество взрывных котят в колоде (игроки - 1 согласно правилам)
     int num_of_defuse = num_of_players + 2; //количество карт обезвредить в игре(по правилам - игроков+2)
     int num_of_norm = num_of_cards - num_of_boom- num_of_defuse; // количество карт без действия пока в колоде
-    int num_of_start_card = 2;// количество обычных карт в руке на начало игры
+    int num_of_start_card = 4;// количество обычных карт в руке на начало игры
     
     Debug debug;
     Action action;
@@ -29,8 +29,7 @@ int main(int argc, char* argv[])
     create.create_players(num_of_players, active_players); //создаем игроков
     create.create_card_neutral(num_of_norm, deck);  //создаем карты без действия
     create.hand_filling(active_players, deck, num_of_start_card);// выдаем обычные карты
-    create.create_card_defuse(num_of_defuse, deck); //создаем карты обезвредить
-    create.hand_filling_defuse(active_players, deck);// выдаем обезвреживающие карты
+    create.create_card_defuse(num_of_defuse, deck, active_players); //создаем карты обезвредить
     create.create_card_bomb(num_of_boom, deck); //создаем бомбы
     create.mix_deck(deck); //размешиваем колоду карт
     debug.write_list_card_from_deck(deck); //вывод информации о картах в колоде
