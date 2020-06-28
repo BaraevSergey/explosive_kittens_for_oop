@@ -65,3 +65,22 @@ void Action::card_in_hand(vector <Card>& deck, vector<Player>& Players, Card car
         break;
     }
 }
+
+
+void Action::hand_filling(vector <Player>& Players, vector <Card>& deck)
+{
+    for (int i = 0; i != Players.size(); i++)
+    {
+        int tmp = rand() % deck.size();
+        Players[i].hand.push_back(deck[tmp]);
+    }
+}
+
+void Action::hand_filling_defuse(vector <Player>& Players, vector <Card>& deck)
+{
+    for (int i = 0; i != Players.size(); i++)
+    {
+        Players[i].hand.push_back(deck.back());
+        deck.pop_back();
+    }
+}

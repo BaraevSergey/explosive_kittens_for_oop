@@ -28,8 +28,13 @@ int main(int argc, char* argv[])
     Create create;
     create.create_players(num_of_players, active_players); //создаем игроков
     create.create_card_neutral(num_of_norm, deck);  //создаем карты без действия
+    for (int i = 0; i < 3; i++)
+    {
+        action.hand_filling(active_players, deck);// метод выдает только по одной карте игроку, поэтому вызываем в цикле
+    }
+    create.create_card_defuse(num_of_defuse, deck); //создаем карты обезвредить
+    action.hand_filling_defuse(active_players, deck);// выдаем обезвреживающие карты
     create.create_card_bomb(num_of_boom, deck); //создаем бомбы
-	create.create_card_defuse(num_of_defuse, deck); //создаем карты обезвредить
     create.mix_deck(deck); //размешиваем колоду карт
     debug.write_list_card_from_deck(deck); //вывод информации о картах в колоде
     debug.write_list_active_players(active_players); //вывод информации о созданных игрока
