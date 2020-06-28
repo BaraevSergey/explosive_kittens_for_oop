@@ -1,6 +1,6 @@
 #include "Player.h"
 
-/* ќбъ€вленние переменных и их принадлежности к классу Player */
+/* ќбъ€вленние переменных и их принадлежности к классу Player смвым*/
 Player::Player(string input)
 {
 	name = input;
