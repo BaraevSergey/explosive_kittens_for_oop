@@ -69,6 +69,7 @@ void Action::card_in_hand(vector <Card>& deck, vector<Player>& Players, Card car
 
 void Action::hand_filling(vector <Player>& Players, vector <Card>& deck)
 {
+    srand(time(0));
     for (int i = 0; i != Players.size(); i++)
     {
         int tmp = rand() % deck.size();
