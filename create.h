@@ -2,9 +2,14 @@
 #include <vector>
 #include "card.h"
 #include "Player.h"
+
 using namespace std;
+
 class Create
 {
+	/*
+	Класс для создания игроков и колоды карт
+	*/
 	public:
 		void create_players(int n, vector <Player>& active_players); // метод создания игроков
 		void create_card_bomb(int number_of_card, vector <Card>& deck); // метод создания взрывных карт

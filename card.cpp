@@ -1,6 +1,6 @@
 #include "card.h"
 
-	Card::Card()
+	Card::Card() 
 	{
 	}
 	Card::Card(string card_name, int card_action)
