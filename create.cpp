@@ -47,7 +47,7 @@ void Create::create_card_defuse(int number_of_defuse, vector <Card> & deck, vect
 		Card temp_card("Обезвреживание", 2);// создание объекта класса Card
 		deck.push_back(temp_card);// добавление карты в конец колоды
 	}
-    for (Player player : players) //затем игроку по одной
+    for (Player &player : players) //затем игроку по одной
     {
         Card temp_card("Обезвреживание", 2);// создание объекта класса Card
         player.hand.push_back(temp_card);
