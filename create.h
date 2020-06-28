@@ -11,5 +11,6 @@ class Create
 		void create_players(int n, vector <Player>& active_players); // метод создания игроков
 		void create_card_bomb(int number_of_card, vector <Card>& deck); // метод создания взрывных карт
 		void create_card_neutral(int number_of_card, vector <Card>& deck); // метод создания обычных карт
+		void create_card_defuse(int number_of_defuse, vector <Card>& deck); //метод создания карт обезвреживания
 		void mix_deck(vector <Card>& deck); // метод перемешивания колоды
 };

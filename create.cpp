@@ -1,9 +1,9 @@
 #include "create.h"
 #include <ctime>
 
-/* Метод создания игроков. Переменные:
-	 - int number - число игроков
-	 - vector <Player>& active_players - набор активных игроков для игры */
+/* ДљДєЕ€Г®Г¤ Е„Г®Г§Г¤Е•Г­ДЌЛ™ ДЌДѓД‘Г®Д™Г®Гў. ДЋДєД‘ДєД›ДєГ­Г­Е±Дє:
+	 - int number - Г·ДЌЕ„Г«Г® ДЌДѓД‘Г®Д™Г®Гў
+	 - vector <Player>& active_players - Г­Е•ГЎГ®Д‘ Е•Д™Е€ДЌГўГ­Е±Е‘ ДЌДѓД‘Г®Д™Г®Гў Г¤Г«Л™ ДЌДѓД‘Е± */
 void Create::create_players(int number, vector <Player>& active_players)
 {
     for (int i = 0; i < number; i++) 
@@ -13,32 +13,39 @@ void Create::create_players(int number, vector <Player>& active_players)
     }
 }
 
-/* Метод создания "обычных" карт. Переменные:
-	- number_of_card - число обычных карт в руке
-	- vector <Card>& deck - набор действующих карт */
+/* ДљДєЕ€Г®Г¤ Е„Г®Г§Г¤Е•Г­ДЌЛ™ "Г®ГЎЕ±Г·Г­Е±Е‘" Д™Е•Д‘Е€. ДЋДєД‘ДєД›ДєГ­Г­Е±Дє:
+	- number_of_card - Г·ДЌЕ„Г«Г® Г®ГЎЕ±Г·Г­Е±Е‘ Д™Е•Д‘Е€ Гў Д‘ГіД™Дє
+	- vector <Card>& deck - Г­Е•ГЎГ®Д‘ Г¤ДєГ©Е„Е€ГўГіЕЈЕЇДЌЕ‘ Д™Е•Д‘Е€ */
 void Create::create_card_neutral(int number_of_card, vector <Card>& deck)
 {
     for (int i = 0; i < number_of_card; i++)
     {
-        Card temp_card("Обычная карта", 0);
+        Card temp_card("ГЋГЎЕ±Г·Г­Е•Л™", 0);
         deck.push_back(temp_card);
     }
 }
 
-/* Метод создания "взрывных" карт. Переменные:
-	- number_of_bomb - число взрывных карт в руке
-	- vector <Card>& deck - набор действующих карт */
+/* ДљДєЕ€Г®Г¤ Е„Г®Г§Г¤Е•Г­ДЌЛ™ "ГўГ§Д‘Е±ГўГ­Е±Е‘" Д™Е•Д‘Е€. ДЋДєД‘ДєД›ДєГ­Г­Е±Дє:
+	- number_of_bomb - Г·ДЌЕ„Г«Г® ГўГ§Д‘Е±ГўГ­Е±Е‘ Д™Е•Д‘Е€ Гў Д‘ГіД™Дє
+	- vector <Card>& deck - Г­Е•ГЎГ®Д‘ Г¤ДєГ©Е„Е€ГўГіЕЈЕЇДЌЕ‘ Д™Е•Д‘Е€ */
 void Create::create_card_bomb(int number_of_bomb, vector <Card>& deck)
 {
     for (int i = 0; i < number_of_bomb; i++)
     {
-        Card temp_card("Взрывная карта", 1);
+        Card temp_card("Г‚Г§Д‘Е±ГўГ­Е•Л™", 1);
         deck.push_back(temp_card);
     }
 }
 
-/* Метод для замешивания всех карт. Переменные:
-	- vector <Card>& deck - набор действующих карт */
+void Create::create_card_defuse(int number_of_defuse, vector <Card> & deck)
+{
+	for (int i = 0; i < number_of_defuse; i++)
+	{
+		Card temp_card("ГЋГЎДєГ§ГўД‘ДєД‡ДЌГўЕ•Г­ДЌДє", 2);
+		deck.push_back(temp_card);
+	}
+}
+
 void Create::mix_deck(vector <Card>& deck)
 {
     srand(time(0));
