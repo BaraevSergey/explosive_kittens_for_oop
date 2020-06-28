@@ -47,5 +47,5 @@ void Debug::write_took_card(Player player, Card card)
 
 void Debug::write_player_defuse_info(Player player)
 {
-	cout << "Игрок " + player.name + " сыграл карту обезвредить!\n";
+	cout << "Игрок " + player.name + " сыграл карту обезвредить!\n\n";
 }
