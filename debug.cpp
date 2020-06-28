@@ -1,51 +1,73 @@
 #include "debug.h"
 
-void Debug::write_list_card_from_deck(vector <Card>& deck) //метод показыающий список карт в колоде
+void Debug::write_list_card_from_deck(vector <Card>& deck)
 {
-    cout << "Карты в колоде:\n";
-    for (Card card_deck : deck)
-    {
-        cout << card_deck.name + "\n";
-    }
+	/*
+	deck - колода карт
+	*/
+
+	cout << "Карты в колоде:\n";
+	for (Card card_deck : deck)
+	{
+		cout << card_deck.name + "\n";
+	}
 }
 
-void Debug::write_list_active_players(vector <Player>& active_players) //метод, который показывает какие игроки активные в списке есть
+void Debug::write_list_active_players(vector <Player>& active_players)
 {
-
-    cout << "\nИгроки активные:\n";
-    for (Player player : active_players)
-    {
-        cout << player.name + "\n";
-    }
-    cout << "\n";
+	/*
+	active_players - cписок активных игроков
+	*/
+	cout << "\nИгроки активные:\n";
+	for (Player player : active_players)
+	{
+		cout << player.name + "\n";
+	}
+	cout << "\n";
 }
 
-void Debug::write_list_card_from_players(Player player) //метод, показывающий карты в руке игрока
+void Debug::write_list_card_from_players(Player player)
 {
-    cout << "У игрока " + player.name + " сейчас в руке:\n";
-    for (Card card : player.hand)
-    {
-        cout << card.name + ";";
-    }
-    cout << "\n\n";
+	/*
+	player - игрок, карты которого мы показываем
+	*/
+	cout << "У игрока " + player.name + " сейчас в руке:\n";
+	for (Card card : player.hand)
+	{
+		cout << card.name + ";";
+	}
+	cout << "\n\n";
 }
 
 void Debug::write_player_boom_info(Player player)
 {
+	/*
+	player - игрок, карты который взрывается
+	*/
 	cout << "Игрок " + player.name + " взорвался\n\n";
 }
 
 void Debug::write_player_winner_info(Player player)
 {
+	/*
+	player - игрок, который победил
+	*/
 	cout << "Игрок " + player.name + " победил!\n";
 }
 
 void Debug::write_took_card(Player player, Card card)
 {
-    cout << "Игрок " + player.name + " взял карту " + card.name + "\n";
+	/*
+	player - игрок, который взял карту
+	card - карта, которую взял игрок
+	*/
+	cout << "Игрок " + player.name + " взял карту " + card.name + "\n";
 }
 
 void Debug::write_player_defuse_info(Player player)
 {
+	/*
+	player - игрок, карты который сыграл карту обезвредить
+	*/
 	cout << "Игрок " + player.name + " сыграл карту обезвредить!\n\n";
 }
