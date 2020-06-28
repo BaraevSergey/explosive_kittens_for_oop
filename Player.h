@@ -4,6 +4,8 @@
 #include <iostream>
 #include "card.h"
 using namespace std;
+
+/* Êëàññ, ??? !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ÄÎÏÈÑÀÒÜ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 class Player
 {
 	public:

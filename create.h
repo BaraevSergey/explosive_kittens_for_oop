@@ -3,6 +3,8 @@
 #include "card.h"
 #include "Player.h"
 using namespace std;
+
+/* Класс, описывающий методы генерации объектов и действий в игре */
 class Create
 {
 	public:

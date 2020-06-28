@@ -1,5 +1,10 @@
 #include "action.h"
 #include "debug.h"
+/*	Метод описания действий при разыгровке карт - Action, где:
+	- vector<Player>& Players - кол-во играющих игроков,
+	- Player Active_Player - игрок, который делает ход(активный игрок),
+	- Card card - карта разыгрываемая активным игроком
+	*/
 void Action::action_card(vector<Player>& Players, Player Active_Player, Card card)
 {
     Debug debug;

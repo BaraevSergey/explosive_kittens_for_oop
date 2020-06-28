@@ -2,6 +2,9 @@
 #include <vector>
 #include <string>
 using namespace std;
+
+/* Класс, описывающий объект "Карта" */
+
 class Card
 {
 	public:

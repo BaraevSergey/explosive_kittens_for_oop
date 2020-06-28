@@ -5,6 +5,9 @@
 
 using namespace std;
 
+
+/* Класс, содержащий методы действий над объектами во время игры*/
+
 class Action 
 {
 	public:
