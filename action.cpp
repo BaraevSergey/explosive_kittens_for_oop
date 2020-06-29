@@ -14,6 +14,8 @@ void Action::get_card(vector<Player>& Players, Card card, int n)
     {
     case 0: //если обычная
     case 2: //если обезвредить
+    case 3: //если слиняй
+    case 4: //если посмотреть в будущее
     {
         Players[n].hand.push_back(card); //просто кладем в руку игрока
         Player temp = Players[n]; //берем игрока который ходит

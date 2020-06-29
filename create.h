@@ -15,8 +15,8 @@ class Create
 		void create_card_bomb(int number_of_card, vector <Card>& deck); // метод создания взрывных карт
 		void create_card_neutral(int number_of_card, vector <Card>& deck); // метод создания обычных карт
 		void create_card_defuse(int number_of_defuse, vector <Card>& deck, vector <Player>& players); //метод создания карт обезвреживания + выдача игрокам карт
-		void create_card_future(int number_of_future, vector <Card>& deck);
+		void create_card_future(int number_of_future, vector <Card>& deck); //метод добавления карты "посмотреть в будушее"
 		void mix_deck(vector <Card>& deck); // метод перемешивания колоды
 		void hand_filling(vector <Player>& Players, vector <Card>& deck, int n); //метод добавления рандомной карты в руку игрока
-		
+		void create_card_leave(int number_of_leave, vector <Card>& deck); //метод добавления карты "слинять"
 };
