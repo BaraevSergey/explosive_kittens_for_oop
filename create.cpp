@@ -84,3 +84,12 @@ void Create::hand_filling(vector <Player>& Players, vector <Card>& deck, int n)
     }
 }
 
+void Create::create_card_future(int number_of_future, vector <Card>& deck)
+{
+    for (int i = 0; i < number_of_future; i++)
+    {
+        Card temp_card("Подсмотри грядущее", 4);// создание объекта класса Card
+        deck.push_back(temp_card);// добавление карты в конец колоды
+    }
+}
+
