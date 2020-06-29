@@ -84,3 +84,15 @@ void Create::hand_filling(vector <Player>& Players, vector <Card>& deck, int n)
     }
 }
 
+void Create::create_card_leave(int number_of_leave, vector <Card>& deck)
+{
+	/*
+	int number_of_bomb - необходимое количество взрывных карт
+	vector <Card>& deck - вектор карт (колода)
+	*/
+	for (int i = 0; i < number_of_leave; i++)
+	{
+		Card temp_card("—лин€й", 3);// создание объекта класса Card
+		deck.push_back(temp_card);// добавление карты в конец колоды
+	}
+}

@@ -17,5 +17,6 @@ class Create
 		void create_card_defuse(int number_of_defuse, vector <Card>& deck, vector <Player>& players); //метод создания карт обезвреживания + выдача игрокам карт
 		void mix_deck(vector <Card>& deck); // метод перемешивания колоды
 		void hand_filling(vector <Player>& Players, vector <Card>& deck, int n); //метод добавления рандомной карты в руку игрока
+		void create_card_leave(int number_of_leave, vector <Card>& deck); //метод создания карты слиняй
 		
 };
