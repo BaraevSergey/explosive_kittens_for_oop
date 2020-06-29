@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
     int num_of_cards = num_of_players * 12;// количество карт в колоде которое будет
     int num_of_boom = num_of_players - 1;// количество взрывных котят в колоде (игроки - 1 согласно правилам)
     int num_of_defuse = num_of_players + 2; //количество карт обезвредить в игре(по правилам - игроков+2)
-    int num_of_norm = num_of_cards - num_of_boom - num_of_defuse - num_of_players * 3; // количество карт без действия пока в колоде
+    int num_of_norm = num_of_cards - num_of_boom - num_of_defuse - num_of_players * 2; // количество карт без действия пока в колоде
     int num_of_start_card = 4;// количество обычных карт в руке на начало игры
     
     Debug debug;
